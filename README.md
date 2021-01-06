@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5ab4d0d3-39ce-46b3-98f6-a593f5699b38/deploy-status)](https://app.netlify.com/sites/festive-dubinsky-18757a/deploys)
+
 # Neat Starter
 
 Starter Template for **N**etlify CMS, **E**leventy, **A**lphine JS & **T**ailwind CSS
