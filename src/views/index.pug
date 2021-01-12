@@ -1,0 +1,8 @@
+extends layout.pug
+include mixins/_imageCard
+
+block photo_gallery
+  .gallery
+    - const photos = ["1h.jpg", "2v.jpg", "3h.jpg", "4h.jpg", "5h.jpg", "6h.jpg", "7h.jpg", "8h.jpg", "9h.jpg", "10h.jpg", "11h.jpg"];
+    for photo in photos
+      +imageCard(photo)

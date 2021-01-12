@@ -1,0 +1,5 @@
+mixin imageCard(photoName)
+  if photoName.includes('h')
+    img(class="materialboxed landscape-photo card-panel" width="650" src="../images/" + photoName)
+  else
+    img(class="materialboxed portrait-photo card-panel" width="650" src="../images/" + photoName)

@@ -1,0 +1,31 @@
+photos:
+  - caption_as_alt: false
+    image: /static/img/pexels-markus-spiske-2027045-1-.jpg
+    orientation: Portrait
+    caption: Ooooh... shiny...
+  - image: /static/img/pexels-george-sultan-1409999.jpg
+    orientation: Portrait
+    caption: Under the hood
+    caption_as_alt: true
+  - image: /static/img/pexels-hebert-santos-3757226.jpg
+    orientation: Landscape
+    caption: Timing belt and alternator
+    alt: Something under the hood of a car
+    caption_as_alt: true
+  - image: /static/img/pexels-pixabay-207498.jpg
+    orientation: Landscape
+    caption: VW Bug engine
+    caption_as_alt: true
+  - image: /static/img/pexels-mali-maeder-42186.jpg
+    orientation: Landscape
+    caption: Greasy engine
+    caption_as_alt: true
+  - caption_as_alt: false
+    image: /static/img/pexels-kaboompics-com-6078.jpg
+    orientation: Landscape
+    caption: Bummer dude!
+    alt: Checking under the hood of a broken down car.
+  - caption_as_alt: true
+    image: /static/img/pexels-tim-mossholder-3076820.jpg
+    orientation: Landscape
+    alt: Fancy... AND shiny!

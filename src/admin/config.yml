@@ -1,3 +1,5 @@
+# @format
+
 backend:
   # Use netlify identity as backend
   name: git-gateway
@@ -12,57 +14,66 @@ public_folder: "/static/img"
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
-  - label: "Blog"
-    name: "blog"
-    folder: "src/posts"
-    create: true
-    editor:
-      preview: false
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: true
-        create: true
-        options: ["Tags", "created", "from", "config.yml"]
-  - label: "Settings"
-    name: "settings"
+  - label: "Manage Content"
+    name: "content"
     editor:
       preview: false
     files:
-      - label: "Navigation"
-        name: "items"
-        file: "src/_data/navigation.yaml"
+      - label: "Photo Gallery"
+        name: "photo_gallery"
+        file: "src/_data/gallery.yaml"
         fields:
-          - label: Nav Items
-            name: items
+          - label: "Photos"
+            name: photos
             widget: list
-            allow_add: false
-            collapsed: false
+            allow_add: true
+            collapsed: true
             fields:
-              - { label: Title, name: text, widget: string }
-              - { label: URL, name: url, widget: string }
-      - label: "Quick Links"
-        name: "links"
-        file: "src/_data/quicklinks.yaml"
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: "image",
+                  allow_multiple: false,
+                  hint: "Choose the image you would like to add to the photo gallery.",
+                }
+              - {
+                  label: "Orientation",
+                  name: "orientation",
+                  widget: select,
+                  multiple: false,
+                  create: false,
+                  options: ["Landscape", "Portrait", "Square"],
+                  hint: "Select the orientation of the image being uploaded. If you're not sure, choose Landscape",
+                }
+              - {
+                  label: "Caption",
+                  name: "caption",
+                  widget: "string",
+                  required: false,
+                  hint: "Add a caption to the image. When the image is expanded, the caption will be displayed beneath it. Not required.",
+                }
+              - {
+                  label: "Use Caption as Alt Text",
+                  name: "caption_as_alt",
+                  widget: "boolean",
+                  hint: "Set to true to reuse the Caption as the Alt Text too. Saves typing.",
+                  default: true,
+                }
+              - {
+                  label: "Alt Text",
+                  name: "alt",
+                  widget: "string",
+                  required: false,
+                  hint: "Add an 'alt' attribute description to the image on the page. Useful for screen readers and SEO. Recommended, but not required.",
+                }
+      - label: "Site Info"
+        name: "info"
+        file: "src/_data/info.yaml"
+        create: false
+        editor:
+          preview: false
         fields:
-          - label: Nav Items
-            name: links
-            widget: list
-            collapsed: false
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: URL, name: url, widget: string }
-              - { label: Description, name: desc, widget: string }
-      - label: "Meta Settings"
-        name: "settings"
-        file: "src/_data/settings.yaml"
-        fields:
-          - { label: Name, name: name, widget: string }
-          - { label: Author, name: author, widget: string }
-          - { label: URL, name: url, widget: string }
+          - { label: "Company Name", name: "name", widget: "string" }
+          - { label: "Owner", name: "owner", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
